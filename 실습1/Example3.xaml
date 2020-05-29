@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Example3" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,2231" sap2010:WorkflowViewState.IdRef="Example3_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Example3" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,1209" sap2010:WorkflowViewState.IdRef="Example3_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -47,16 +47,17 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Example3" sap:VirtualizedContainerService.HintSize="915,2066" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Example3" sap:VirtualizedContainerService.HintSize="518,1044" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="873,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[&quot;시작 시간 : &quot; + Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" />
-    <Sequence DisplayName="데스크톱" sap:VirtualizedContainerService.HintSize="873,1630" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <ui:AppendLine DisplayName="Append Line" Encoding="UTF-8" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="476,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[&quot;시작 시간 : &quot; + Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" />
+    <Sequence DisplayName="데스크톱" sap:VirtualizedContainerService.HintSize="476,608" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:GenericValue" Name="cores" />
         <Variable x:TypeArguments="ui:GenericValue" Name="memory" />
@@ -66,26 +67,36 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="'cpuz_x64.exe  CPU-Z' 열기" FileName="C:\cpu-z_1.92-en\cpuz_x64.exe" sap:VirtualizedContainerService.HintSize="831,1538" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="5cb0d498799a755045d2b293775e725e" Selector="&lt;wnd app='cpuz_x64.exe' cls='#32770' title='CPU-Z ' /&gt;">
+      <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="'cpuz_x64.exe  CPU-Z' 열기" FileName="C:\cpu-z_1.92-en\cpuz_x64.exe" sap:VirtualizedContainerService.HintSize="434,516" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="5cb0d498799a755045d2b293775e725e" Selector="&lt;wnd app='cpuz_x64.exe' cls='#32770' title='CPU-Z ' /&gt;">
         <ui:OpenApplication.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="797,1392" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="242,370" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="755,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="TC001 정상 실행" />
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="755,1128" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="TC001" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetFullText DisplayName="Get Full Text 'Static'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
+                <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="TC001 success" />
+              </Sequence>
+              <Sequence DisplayName="TC002" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="713,132" sap2010:WorkflowViewState.IdRef="AppendLine_11" Text="TC002 start" />
+                <ui:GetFullText DisplayName="Get Full Text 'Static'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="GetFullText_3" IgnoreHidden="False">
                   <ui:GetFullText.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa933442-e7d9-4caf-a53d-bcd6e9cc1c4d" InformativeScreenshot="783f183b6d570e062b46f4b581182606" Selector="&lt;wnd ctrlid='1120' title='4' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -100,15 +111,24 @@
                     <OutArgument x:TypeArguments="ui:GenericValue">[cores]</OutArgument>
                   </ui:GetFullText.Text>
                 </ui:GetFullText>
-                <If Condition="[Decimal.Parse(cores)&gt;2]" sap:VirtualizedContainerService.HintSize="713,279" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[Decimal.Parse(cores)&gt;2]" sap:VirtualizedContainerService.HintSize="713,279" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
-                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="TC002 cores&gt;2" />
+                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_12" Text="TC002 success" />
                   </If.Then>
                   <If.Else>
-                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="TC002 cores&lt;=2" />
+                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_13" Text="TC002 failure" />
                   </If.Else>
                 </If>
-                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab  Memory'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+              </Sequence>
+              <Sequence DisplayName="TC003" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="713,132" sap2010:WorkflowViewState.IdRef="AppendLine_14" Text="TC003 start" />
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab  Memory'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                   <ui:Click.CursorPosition>
                     <ui:CursorPosition OffsetX="22" OffsetY="9" Position="TopLeft" />
                   </ui:Click.CursorPosition>
@@ -123,7 +143,7 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:GetFullText DisplayName="Get Full Text 'Static'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="False">
+                <ui:GetFullText DisplayName="Get Full Text 'Static'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="GetFullText_4" IgnoreHidden="False">
                   <ui:GetFullText.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8a1d3136-26af-421c-9de9-817e0cc2ef22" InformativeScreenshot="e70dd3e8a8b5ff04c85afb99839451ef" Selector="&lt;wnd ctrlid='1061' title='16 GBytes' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -138,12 +158,12 @@
                     <OutArgument x:TypeArguments="ui:GenericValue">[memory]</OutArgument>
                   </ui:GetFullText.Text>
                 </ui:GetFullText>
-                <If Condition="[Decimal.Parse(memory.Replace(&quot; GBytes&quot; , &quot;&quot;))&gt;8]" sap:VirtualizedContainerService.HintSize="713,279" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[Decimal.Parse(memory.Replace(&quot; GBytes&quot; , &quot;&quot;))&gt;8]" sap:VirtualizedContainerService.HintSize="713,279" sap2010:WorkflowViewState.IdRef="If_4">
                   <If.Then>
-                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="TC003 memory&gt;8" />
+                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_15" Text="TC003 success" />
                   </If.Then>
                   <If.Else>
-                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="TC003 memory&lt;=8" />
+                    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_16" Text="TC003 failure" />
                   </If.Else>
                 </If>
               </Sequence>
@@ -152,6 +172,6 @@
         </ui:OpenApplication.Body>
       </ui:OpenApplication>
     </Sequence>
-    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;)]" sap:VirtualizedContainerService.HintSize="873,132" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[&quot;종료 시간 : &quot; + Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" />
+    <ui:AppendLine DisplayName="Append Line" FileName="[&quot;Result&quot; + Now.ToString(&quot;yyyy_MM_dd&quot;) +&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="476,132" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[&quot;종료 시간 : &quot; + Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" />
   </Sequence>
 </Activity>
